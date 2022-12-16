@@ -48,7 +48,8 @@ $ npm run start:prod
 <h2>Composição do nosso projeto</h2>
 <h2>Neste projeto Temos alguns Endpoints Base que podem ser extendidos da forma mais adequada para seu contexto.</h2>
 
-<ul>
+
+
 <li>
 <li>GET /users
 <li>POST /users
