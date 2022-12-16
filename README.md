@@ -45,29 +45,15 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+<h2>Composição do nosso projeto</h2>
+<h2>Neste projeto Temos alguns Endpoints Base que podem ser extendidos da forma mais adequada para seu contexto.</h2>
 
-```bash
-# unit tests
-$ npm run test
+São eles:
 
-# e2e tests
-$ npm run test:e2e
+Usuários
+GET /users
+POST /users
+PACTH /users/:id
+DELETE /users/:id
 
-# test coverage
-$ npm run test:cov
-```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
