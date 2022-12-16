@@ -53,7 +53,7 @@ $ npm run start:prod
 <li>
 <li>GET /users
 <li>POST /users
-<li>PACTH /users/:id
+<li>PATCH /users/:id
 <li>DELETE /users/:id
 
 </ul>
