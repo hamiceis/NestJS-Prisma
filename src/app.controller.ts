@@ -1,18 +1,22 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { AppService } from './app.service';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { UserRepository } from './repositories/user-repositoriry';
 import { CreateUserDTO } from './dto/create-user-dto';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private userRepository: UserRepository,
-  ) {}
+  constructor(private userRepository: UserRepository) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('users')
+  async getUsers() {
+    return await this.userRepository.getUsers();
   }
 
   @Post('users')
@@ -21,8 +25,18 @@ export class AppController {
     await this.userRepository.create(name, email);
   }
 
-  @Get('users')
-  async getUsers() {
-    return await this.userRepository.getUsers();
+  @Patch('users/:id')
+  async updateUser(@Param('id') id: string, @Body() body: CreateUserDTO) {
+    const { name, email } = body;
+    const updateUser = await this.userRepository.updateUser(id, name, email);
+    return updateUser;
+  }
+
+  @Delete('users/:id')
+  async deleteUser(@Param('id') id: string) {
+    await this.userRepository.deleteUser(id);
+    return {
+      message: 'Usuário deletado com sucesso',
+    };
   }
 }
